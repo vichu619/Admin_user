@@ -1,0 +1,127 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5" style="background-image: url(https://i0.wp.com/www.korvia.com/wp-content/uploads/2015/11/korvia-image-background-tnkr-signup.jpg?ssl=1)">
+            <div class="row justify-content-center" >
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form class="mx-1 mx-md-4" action="/signuppost" name="myform" method="post" onsubmit="return validateform()" enctype="application/x-www-form-urlencoded">
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" name="username" id="signname" class="form-control" />
+                      <label class="form-label" for="signname" >Your Name</label>
+                      <p class="text-danger">{{errName}}</p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" name="emailaddress" id="signemail" class="form-control" />
+                      <label class="form-label" for="signemail" >Your Email</label>
+                      <p class="text-danger">{{errMail}}</p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" name="password" id="signpw1" class="form-control" />
+                      <label class="form-label" for="signpw1" >Password</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" name="conpassword" id="signpw2" class="form-control" />
+                      <label class="form-label" for="signpw2" >Repeat your password</label>
+                    
+                    </div>
+                  </div>
+
+                  <div class="d-flex   mb-3 mb-lg-4 ">
+                     <button  type="submit" value="register" class="btn btn-dark btn-lg">submit</button>
+                    <a href="/" style="color:blue" class=" mx-2 mt-2">Already have an account</a>
+                    
+                  
+                    <p style="color: green;">{{created}}</p>
+                  </div>
+                  <br>
+                  
+                   
+                  </div>
+               
+                </form>
+          
+              
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                {{!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image"> --}}
+   
+              </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+
+  function validateform(){  
+ const pw1 = document.getElementById("signpw1").value;
+ const pw2 = document.getElementById("signpw2").value;
+ const name1 = document.getElementById("signname").value;
+ const email1 = document.getElementById("signemail").value;
+console.log('hellllppppp')
+  val1=true
+  val2=true
+  val3=true
+  val4=true
+  val5=true
+  val6=true
+if (email1==null || name1==""){  
+  alert("Name can't be blank");  
+  val1=false;
+}else if (name1==null || email1==""){  
+  alert("Email can't be blank");  
+  val2=false;
+}
+else if(pw1==""){
+   alert("Please Enter password")
+   val3=false;
+}else if(pw2==""){
+alert(" Re-enter password")
+   val6=false;
+}else if(pw1.length<4){  
+  alert("Password must be at least 4 characters long.");  
+   val4=false;
+  }
+  else if(pw2.length !=0 && pw2.length!=pw1.length){  
+  alert("Password must be same.");  
+  val5=false;
+  }
+
+  if(val1&&val2&&val3&&val4&&val5&&val6){
+    return true;
+  }else{
+    return false;
+  }
+   
+}  
+</script>
+</section>
+
+
+ 
+
+

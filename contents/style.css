@@ -1,0 +1,31 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .card-img-top{
+    height: 20rem;
+    
+  }
+  #thumbnail-img  {
+    width: 2rem;
+    height: 3rem;
+  }
+  .separator{
+    height: 5rem;
+  }
+  .card{
+    box-shadow: 5px 5px 5px 5px #888888
+  }
+  #form-1{
+    margin-top: 3rem;
+    
+  }
+  #form-2{
+    margin-top: 1rem;
+  }

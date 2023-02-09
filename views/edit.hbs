@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top px-3 " style="">
+  <a class="navbar-brand text-warning" href="#"><mark>E-mob</mark>Kart </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-warning" href="#">Cart <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form action="/admin/adlogout" method="get" class="form-inline my-2 my-lg-0" style="margin-left: 75rem;">
+      <button class="btn btn-outline-warning  text-danger my-2 my-sm-0" type="submit">Sign out</button>
+    </form>
+  </div>
+</nav>
+<section style="margin-top: 5rem;">
+  <div class=" container row">
+    <div class="ml-5 col-md-6" >
+      <h2 class="text-center mt-5">Edit User</h2>
+      <form action="/admin/updateuser/{{matcheduser._id}}" method="post" onsubmit="return validateform()">
+        <label for="">Name</label>
+        <input type="text" name="updatename" class="form-control" id="editname" value="{{matcheduser.name}}">
+        <p class="text-danger">{{errName}}</p>
+
+        <label for="">Email</label>
+        <input type="text" name="email" class="form-control" id="editemail" value="{{matcheduser.email}}">
+
+        <button type="submit" class="btn btn-success mt-4">Submit</button>
+        <a href="/admin/getusers" style="color:blue" class=" mx-2 mt-2 p-5">User Details</a>
+
+
+      </form>
+      <p class="text-danger">{{sameMail}}</p>
+    </div>
+  </div>
+  <script>
+    function validateform(){
+      const name1 = document.getElementById('editname').value
+      const email1 = document.getElementById('editemail').value
+
+      val1=true;
+      val2=true;
+      if(name1==null || name1 == ""){
+        val1=false;
+        alert('Please give a name')
+      }else if(email1==null || email1==""){
+        val2=false
+        alert('Please give an email id')
+      }
+      if(val1&&val2){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  </script>
+</section>
